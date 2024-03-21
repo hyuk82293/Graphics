@@ -1,0 +1,56 @@
+function setup() {
+  createCanvas(1000, 1000);
+}
+
+function draw() {
+  background(220);
+
+  push();
+  translate(width / 4, height / 4);
+  rotate(frameCount * 0.01);
+  scale(sin(frameCount * 0.01)+1);
+  fill(0, 255, 0);
+  strokeWeight(0);
+  ellipse(0, 0, 100, 80);
+  triangle(-50,-70,-50,0,-20,-30);
+  triangle(50,-70,50,0,20,-30);
+  fill(0, 0, 0);
+  strokeWeight(1);
+  ellipse(-20, -15, 10, 10);
+  ellipse(20, -15, 10, 10);
+  ellipse(0, 0, 10, 5);
+  line(-20,13,-50,15);
+  line(-20,17,-50,19);
+  line(20,13,50,15);
+  line(20,17,50,19);
+  pop();
+
+  push();
+  translate(width / 4 * 3, height / 4);
+  rotate(frameCount * 0.01);
+  scale(sin(frameCount * 0.01) + 1);
+  fill(255, 204, 0);
+  ellipse(0, 0, 90, 90); //머리
+
+  fill(0);
+  ellipse(-15, -10, 10, 20); //왼쪽 눈
+  ellipse(15, -10, 10, 20); //오른쪽 눈
+
+  noFill();
+  strokeWeight(3);
+  arc(0, 10, 30, 20, 0, PI); //입
+  pop();
+}
+
+//혹시 인원이 더 늘어나게 된다면 밑의 코드를 추가하셔서 사용하시면 됩니다.
+push();
+  translate(width / 4, height / 4 * 3);
+  //rotate(frameCount * 0.01);
+  //scale(sin(frameCount * 0.01)+1);
+  pop();
+
+  push();
+  translate(width / 4 * 3, height / 4 * 3);
+  rotate(frameCount * 0.01);
+  scale(sin(frameCount * 0.01)+1);
+  pop();
