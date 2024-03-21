@@ -40,17 +40,13 @@ function draw() {
   strokeWeight(3);
   arc(0, 10, 30, 20, 0, PI); //입
   pop();
-}
-
-//혹시 인원이 더 늘어나게 된다면 밑의 코드를 추가하셔서 사용하시면 됩니다.
-push();
-  translate(width / 4, height / 4 * 3);
-  //rotate(frameCount * 0.01);
-  //scale(sin(frameCount * 0.01)+1);
-  pop();
-
+  
   push();
-  translate(width / 4 * 3, height / 4 * 3);
+  translate(width / 4, height / 4 * 3);
   rotate(frameCount * 0.01);
   scale(sin(frameCount * 0.01)+1);
+  
+  //여기
+  
   pop();
+}
