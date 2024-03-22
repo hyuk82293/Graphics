@@ -1,3 +1,6 @@
+let angle = 0;
+let opening = true;
+
 function setup() {
   createCanvas(1000, 1000);
 }
@@ -45,8 +48,22 @@ function draw() {
   translate(width / 4, height / 4 * 3);
   rotate(frameCount * 0.01);
   scale(sin(frameCount * 0.01)+1);
-  
-  //여기
-  
+  fill(255, 255, 0);
+  noStroke();
+  if(opening) {
+    angle += 0.05;
+    if(angle > PI / 3) {
+      opening = false;
+    }
+  }else {
+    angle -= 0.05;
+    if(angle < 0) {
+      angle = 0;
+      opening = true;
+    }
+  }
+  arc(0, 0, 100, 100, angle, TWO_PI - angle, PIE);
+  fill(0);
+  ellipse(-5, -22, 15, 15);
   pop();
 }
