@@ -8,6 +8,7 @@ function setup() {
 function draw() {
   background(220);
 
+
   push();
   translate(width / 4, height / 4);
   rotate(frameCount * 0.01);
@@ -65,5 +66,25 @@ function draw() {
   arc(0, 0, 100, 100, angle, TWO_PI - angle, PIE);
   fill(0);
   ellipse(-5, -22, 15, 15);
+  pop();
+  
+  
+  push();
+  translate(width / 4 * 3, height / 4 * 3);
+  rotate(frameCount * 0.01);
+  scale(0.7 * (sin(frameCount * 0.01) + 1));
+  noStroke();
+  rectMode(CENTER);
+  fill(0);
+  rect(0, 0, 150, 70);
+  fill(240, 200, 150);
+  rect(0, 70, 130, 110);
+  fill(255);
+  rect(-30, 50, 30, 20);
+  rect(30, 50, 30, 20);
+  ellipse(0, 105, 30, 20);
+  fill(0);
+  rect(-30, 50, 10);
+  rect(30, 50, 10);
   pop();
 }
